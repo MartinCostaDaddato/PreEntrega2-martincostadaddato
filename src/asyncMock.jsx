@@ -6,7 +6,7 @@ const products = [
     category: "Men",
     img: "https://i.ibb.co/4SVg0Bm/IMG-4751.jpg",
     stock: 25,
-    description: "Esparta men",
+    description: "Type Invictus by Paco Rabanne",
   },
   {
     id: "2",
@@ -15,7 +15,7 @@ const products = [
     category: "Womens",
     img: "https://i.ibb.co/55cYhjH/IMG-4318.jpg",
     stock: 20,
-    description: "Atenas womens",
+    description: "Type Olympéa by Paco Rabanne",
   },
   {
     id: "3",
@@ -24,7 +24,7 @@ const products = [
     category: "Womens",
     img: "https://i.ibb.co/K2nqFZY/IMG-4305.jpg",
     stock: 25,
-    description: "Marsella womens",
+    description: "Type Scandal by Night by Jean Paul Gaultier",
   },
   {
     id: "4",
@@ -33,7 +33,7 @@ const products = [
     category: "Womens",
     img: "https://i.ibb.co/gwCj9Kg/IMG-4303.jpg",
     stock: 20,
-    description: "Charlotte womens",
+    description: "Type Good Girl by Carolina Herrera",
   },
   {
     id: "5",
@@ -42,7 +42,7 @@ const products = [
     category: "Men",
     img: "https://i.ibb.co/YTNyym8/IMG-4297.jpg",
     stock: 35,
-    description: "Las Vegas Men",
+    description: "Type One Million by Paco Rabanne",
   },
   {
     id: "6",
@@ -51,7 +51,7 @@ const products = [
     category: "Men",
     img: "https://i.ibb.co/02sQvYv/IMG-4296.jpg",
     stock: 20,
-    description: "Random Men",
+    description: "Type Phantom by Paco Rabanne",
   },
 ];
 
@@ -59,6 +59,15 @@ export const getProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products);
-    }, 100);
+    }, 500);
   });
 };
+
+
+export const getProductById = (productId) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(products.find(prod => prod.id === productId))
+    }, 500);
+  })
+}

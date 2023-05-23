@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <a href="#">Logo</a>
-      <div>
+      <div className="hidden md:flex" >
         <a href="#"><button>Productos</button></a>
         <a href="#"><button>Destacado</button></a>
         <a href="#"><button>Contacto</button></a>

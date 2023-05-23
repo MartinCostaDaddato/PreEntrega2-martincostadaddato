@@ -18,7 +18,7 @@ function ItemCount({ stock, initial }) {
 
   return (
       <div className="flex w-full justify-center">
-        <div className="flex items-center justify-between mt-10 px-4 text-5xl w-44 h-20 border text-white">
+        <div className="flex items-center justify-between px-4 md:px-4 py-1 md:py-2 text-3xl w-full sm:w-1/2 border border-neutral-800 rounded-lg text-nuetral-800">
           <button onClick={decrementarCantidad}>-</button>
           <h4 className="">{cantidad}</h4>
           <button onClick={incrementarCantidad}>+</button>

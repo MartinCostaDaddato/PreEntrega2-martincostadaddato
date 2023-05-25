@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <Link to="/">Logo</Link>
+      <Link to="/"  >Logo</Link>
       <div className="hidden sm:flex" >
       <Link to="/"><button>Productos</button></Link>
       <Link to={`/category/Hombre`}><button>Hombre</button></Link>

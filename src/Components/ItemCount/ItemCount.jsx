@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function ItemCount({ stock, initial }) {
+function ItemCount({ stock, initial, onAdd }) {
   const [cantidad, setCantidad] = useState(initial);
 
   const incrementarCantidad = () => {
@@ -17,13 +17,16 @@ function ItemCount({ stock, initial }) {
   };
 
   return (
-      <div className="flex w-full justify-center">
-        <div className="flex items-center justify-between px-4 md:px-4 py-1 md:py-2 text-3xl w-full sm:w-1/2 border border-neutral-800 rounded-lg text-nuetral-800">
-          <button onClick={decrementarCantidad}>-</button>
-          <h4 className="">{cantidad}</h4>
-          <button onClick={incrementarCantidad}>+</button>
-        </div>
+    <div className="flex w-full justify-center items-center flex-col">
+      <div className="flex justify-between px-4 md:px-4 py-1 md:py-2 text-3xl w-full sm:w-44 border border-neutral-800 rounded-lg text-nuetral-800">
+        <button onClick={decrementarCantidad}>-</button>
+        <h4 className="">{cantidad}</h4>
+        <button onClick={incrementarCantidad}>+</button>
       </div>
+      <button className="mt-3 border border-neutral-800 border-1 py-2 rounded-md text-neutral-800 w-1/2" onClick={() => onAdd(cantidad)}>
+        Añadir al Carrito
+      </button>
+    </div>
   );
 }
 

@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+
+import { CartContext } from "../CartContext/CartContext";
 
 function ItemDetail({ id, name, price, category, img, stock, description }) {
   const [quantityAdded, setQuantityAdded] = useState(0);
 
+  const { addItem } = useContext(CartContext)
+
   const handleOnAdd = (cantidad) => {
     setQuantityAdded(cantidad);
+
+    const item = {
+      id, name, price
+    }
+
+    addItem(item, cantidad)
   };
+
 
   return (
     <div className="flex sm:border border-neutral-800 flex-col sm:flex-row max-w-xs sm:max-w-3xl">

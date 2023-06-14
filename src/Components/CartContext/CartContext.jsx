@@ -9,7 +9,6 @@ export const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
-  
   console.log(cart);
 
   const addItem = (item, cantidad) => {
@@ -20,18 +19,17 @@ export const CartProvider = ({ children }) => {
     } else {
       console.error("El producto ya esta en el carrito");
     }
-    
   };
 
-  const removeItem = (itemId) => {
+  function removeItem(itemId, price, cantidad){
     const cartUpdate = cart.filter((prod) => prod.id !== itemId);
+    setTotal(total - price * cantidad)
     setCart(cartUpdate);
   };
 
   const clearCart = () => {
     setCart([]);
-    setTotal(0)
-    setTotalQuantity(0)
+    setTotal(0);
   };
 
   const isInCart = (itemId) => {
@@ -39,10 +37,10 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, total, totalQuantity}}>
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, clearCart, total, totalQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );
 };
-
-

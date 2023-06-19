@@ -7,7 +7,7 @@ const CartItem = ({ id, name, price, category, img, stock, description, cantidad
   const { cart, totalQuantity, total, removeItem } = useContext(CartContext);
 
   return (
-    <div className="flex items-center  justify-between w-full md:w-1/2  border border-neutral-300 shadow md:text-2xl mt-6">
+    <div className="flex items-center  justify-between w-full md:w-2/3 border border-neutral-300 shadow md:text-2xl mt-6">
       <div className="flex items-center">
         <img
           src={img}

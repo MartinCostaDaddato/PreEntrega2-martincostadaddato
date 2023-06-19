@@ -43,7 +43,8 @@ function ItemDetail({ id, name, price, category, img, stock, description }) {
               quantityAdded > 0 ?(
               <>
                 
-                <Link to="/cart" className='border border-neutral-800 rounded-md w-1/2 p-5 self-center'>
+                <Link to="/" className='border border-neutral-800 rounded-md w-1/2 p-3 mb-3 text-center self-center hover:shadow-md hover:border-green-800'>Seguir comprando</Link>
+                <Link to="/cart" className='border border-neutral-800 rounded-md w-1/2 p-3 self-center text-center hover:shadow-md hover:border-green-800'>
                   Terminar compra
                 </Link>
               </>

@@ -9,8 +9,6 @@ export const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
-  console.log(cart);
-
   const addItem = (item, cantidad) => {
     if (!isInCart(item.id)) {
       setCart((prev) => [...prev, { ...item, cantidad }]);

@@ -1,4 +1,6 @@
 import { createContext, useState } from "react";
+import { Alert } from '@rewind-ui/core';
+import { Navigate, redirect } from "react-router-dom";
 
 export const CartContext = createContext({
   cart: [],
@@ -15,14 +17,16 @@ export const CartProvider = ({ children }) => {
       setTotal(total + item.price * cantidad);
       setTotalQuantity(cantidad)
     } else {
-      console.error("El producto ya esta en el carrito");
-    }
+      console.log('El producto seleccionado ya se encuentra en el carrito')
+
+      }
   };
 
   function removeItem(itemId, price, cantidad){
     const cartUpdate = cart.filter((prod) => prod.id !== itemId);
     setTotal(total - price * cantidad)
     setCart(cartUpdate);
+    console.log(cart.length)
   };
 
   const clearCart = () => {

@@ -22,7 +22,7 @@ const Cart = () => {
                 { cart.map(p => <CartItem key={p.id} {...p}/>) }
                 <h3 className="text-xl md:text-5xl mt-10 m-5">Total: ${total}</h3>
                 <div className="flex flex-col w-1/2 justify-center items-center">
-                    <Link to='/checkout' className="text-2xl w-full md:text-3xl border rounded-md md:w-1/2 text-center p-3 mb-4 border-neutral-800 text-neutral-800 hover:bg-green-800 hover:text-white transition-colors">Checkout</Link>
+                    <Link to='/checkout' className="text-2xl w-full md:text-3xl border rounded-md md:w-1/2 text-center p-3 mb-4 border-neutral-800 text-neutral-800 hover:bg-green-800 hover:text-white transition-colors">Pagar</Link>
                     <button onClick={() => clearCart() } className='text-sm md:text-lg p-3 border border-neutral-800 rounded-md hover:bg-red-300 transition-colors' >Limpiar carrito</button>    
                 </div>
             </div>

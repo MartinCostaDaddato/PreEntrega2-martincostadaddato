@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { CartContext } from "../CartContext/CartContext"
 
 const CheckoutForm = ({ onConfirm }) => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
+    const { clearCart } = useContext(CartContext)
 
     const handleConfirm = (event) => {
         event.preventDefault()
@@ -48,7 +50,7 @@ const CheckoutForm = ({ onConfirm }) => {
                         className="border-b border-t border-neutral-400 p-5 rounded-lg drop-shadow-md"
                     />
                 </label>
-                    <button type="submit" className="p-5 border border-neutral-400 rounded-lg shadow-xl text-green-950 hover:bg-green-600 hover:text-white w-72 md:w-96 active:border-inherit">Crear Orden</button>
+                    <button type="submit" className="p-5 border border-neutral-400 rounded-lg shadow-xl text-green-950 hover:bg-green-600 hover:text-white w-72 md:w-96 active:border-inherit" >Crear Orden</button>
             </form>
         </div>
     )

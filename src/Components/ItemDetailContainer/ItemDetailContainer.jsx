@@ -4,6 +4,7 @@ import { getProductById } from "../../asyncMock";
 import { useParams } from "react-router-dom";
 import {getDoc, doc} from 'firebase/firestore';
 import { db } from "../../main";
+import { PulseLoader } from "react-spinners";
 
 
 function ItemDetailContainer() {
@@ -31,19 +32,13 @@ function ItemDetailContainer() {
       })
   }, [itemId])
 
-  // useEffect(() => {
-  //   getProductById(itemId)
-  //     .then((response) => {
-  //       setProducts(response);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, []);
-
   return (
     <div className="flex justify-center items-center mt-5 mx-2 sm:m-20">
-      <ItemDetail {...products} />
+      {
+        loading 
+        ? <PulseLoader color="#202020" className="p-72"/>
+        : <ItemDetail {...products} />
+      }
     </div>
   );
 }
